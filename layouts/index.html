@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<div class="index-main">
+
+  <div class="index-top index-display index-buoy">
+    <div class="hero-title">
+      {{ with .Site.Params.hero }}
+      <div class="hero-title-0">{{ .title }}</div>
+      <div class="hero-title-1">{{ .subtitle }}</div>
+      <a href="{{ .url }}">
+        <div class="i18n-readmore hero-title-btn">READ MORE</div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  <div class="index-title i18n-works">WORKS</div>
+  <div class="index-works index-nodisplay index-buoy">
+    <div class="index-works-list">
+      {{ $posts_pages := where site.RegularPages "Type" "works" }}
+      {{ range first 5 $posts_pages }}
+      <a href="{{ .RelPermalink }}">
+        <div class="index-works-list-content" style="background-image: url({{ .Params.Cover }});"></div>
+      </a>
+      {{ end }}
+      <a href="/works">
+        <div class="index-works-list-content">
+          <div class="index-works-list-content-more">
+            <div class="i18n-more">MORE</div>
+            <div class="i18n-works">WORKS</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="index-title i18n-blogs">BLOGS</div>
+  <div class="index-blogs index-nodisplay index-buoy">
+    <div class="index-blogs-container">
+      <div class="blogs-cardbox">
+        {{ $posts_pages := where site.RegularPages "Type" "posts" }}
+        {{ range first 7 $posts_pages }}
+        <a href="{{ .RelPermalink }}">
+          <div class="blogs-cardbox-card">
+            <div class="blogs-cardbox-card-cover" style="background-image: url({{ .Params.Cover }});"></div>
+            <div class="blogs-cardbox-card-tag">
+              <div class="blogs-cardbox-card-class class-{{ .Params.Class }}">{{ .Params.Class }}</div>
+              <div class="blogs-cardbox-card-date">{{ .Date | dateFormat "2006.01.02" }}</div>
+            </div>
+            <div class="blogs-cardbox-card-title">{{ .Title }}</div>
+
+          </div>
+        </a>
+        {{ end }}
+        <a href="/posts">
+          <div class="blogs-cardbox-more">
+            <div class="blogs-cardbox-more-content">
+              <div class="i18n-more">MORE</div>
+              <div class="i18n-blogs">BLOGS</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

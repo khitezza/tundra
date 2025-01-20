@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: Anta;
+    src: url('/assets/fonts/Anta-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: WantedSans;
+    src: url('/assets/fonts/WantedSans-Regular.ttf') format('truetype');
+}
+
+:root {
+    --font-primary: Anta, sans-serif;
+    --font-secondary: WantedSans;
+    --font-text: "Noto Sans", "Helvetica Neue", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+}

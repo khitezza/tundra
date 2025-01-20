@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="list">
+  <div class="list-container">
+
+    {{ if eq .Section "works" }}
+    <div class="list-works">
+      <div class="list-works-box">
+        {{ $pages := where site.RegularPages "Type" .Section }}
+        {{ $paginator := .Paginate $pages 6 }}
+        {{ range $paginator.Pages }}
+        <a href="{{ .RelPermalink }}">
+          <div class="list-works-box-content">
+            <div class="index-works-list-content" style="background-image: url({{ .Params.Cover }});"></div>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ else if eq .Section "posts" }}
+    <div class="list-posts">
+      <div class="list-posts-box">
+        <div class="blogs-cardbox">
+          {{ $pages := where site.RegularPages "Type" .Section }}
+          {{ $paginator := .Paginate $pages 8 }}
+          {{ range $paginator.Pages }}
+          <a href="{{ .RelPermalink }}">
+            <div class="blogs-cardbox-card">
+              <div class="blogs-cardbox-card-cover" style="background-image: url({{ .Params.Cover }});"></div>
+              <div class="blogs-cardbox-card-tag">
+                <div class="blogs-cardbox-card-class class-{{ .Params.Class }}">{{ .Params.Class }}</div>
+                <div class="blogs-cardbox-card-date">{{ .Date | dateFormat "2006.01.02" }}</div>
+              </div>
+              <div class="blogs-cardbox-card-title">{{ .Title }}</div>
+
+            </div>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    {{ else }}
+    <div class="list-msg">Oops...</div>
+    {{ end }}
+    {{ partial "partials/pagination.html" . }}
+  </div>
+</div>
+{{ end }}

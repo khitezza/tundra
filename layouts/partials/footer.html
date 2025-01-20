@@ -1,0 +1,29 @@
+{{ if .IsPage}}
+<div class="footer footer-article">
+{{ else }}
+<div class="footer footer-home">
+{{ end }}
+        <div>&copy; {{ now.Year }} {{ site.Title }}. <span class="i18n-copy"> All rights reserved</span>.</div>
+        <div><span class="i18n-poweredby0">Powered by</span> <a href="https://gohugo.io">Hugo</a> & <a
+                        href="https://github.com/khitezza/arbalest/">Arbalest</a><span class="i18n-poweredby1"></span>.
+        </div>
+</div>
+{{ if .IsPage}}
+<div class="statement statement-article">
+{{ else }}
+<div class="statement statement-home">
+{{ end }}
+        <div class="statement0">
+                <a class="i18n-privacy-policy" href="/privacy">Privacy Policy</a>
+                &nbsp;|&nbsp;
+                <a class="i18n-bug-report" href="https://github.com/khitezza/arbalest/issues/new/choose">Bug Report</a>
+                &nbsp;|&nbsp;
+                {{ with .Site.Params.social.email }}
+                <a class="i18n-contact-info" href="mailto://{{ . }}">Contact Info</a>
+                {{ end }}
+                .
+        </div>
+        <div class="statement1">
+                <span class="i18n-statement1-0">Unless otherwise stated, all content on this website are published under the</span>&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>&nbsp;<span class="i18n-statement1-1">license</span>.
+        </div>
+</div>

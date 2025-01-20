@@ -1,0 +1,16 @@
+name = 'Arbalest'
+license = 'Apache-2.0'
+licenselink = 'https://github.com/khitezza/arbalest/blob/trunk/LICENSE'
+description = 'Personal website...'
+
+demosite = 'https://khitezza.com'
+
+tags = ['simple', 'clean', 'blog', 'novels', 'showcase']
+
+features = ['blog', 'novels', 'showcase']
+
+min_version = "0.138.0"
+
+[author]
+  name = 'Hao Wu'
+  homepage = 'https://khitezza.com'

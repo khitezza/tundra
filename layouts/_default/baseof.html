@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
+<head>
+  {{ partial "head.html" . }}
+</head>
+{{ if .IsHome }}
+<body style="background-color: var(--color-black);">
+{{ else if .IsPage }}
+<body style="background-color: var(--color-white);">
+{{ else }}
+<body style="background-color: var(--color-gray);">
+{{ end }}
+  <nav>
+    {{ partial "navbar.html" . }}
+  </nav>
+  {{ with .IsHome }}
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+  {{ end }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+  {{ with .IsHome }}
+  <script>
+    window.onload = function () {
+      printVersion();
+      var menu_ids = sessionStorage.getItem("menu_id");
+      if (menu_ids) {
+        menuSwitcher(menu_ids);
+      }
+      window.addEventListener('scroll',function () {
+        var scrollStatus = window.scrollY;
+        var navbar = document.getElementById("navbar")
+        if (scrollStatus >200) {
+          navbar.classList.replace('navbar-home', 'navbar-section');
+        }else{
+          navbar.classList.replace('navbar-section', 'navbar-home');
+        }
+      })
+    }
+  </script>
+  {{ end }}
+
+  {{ if not .IsHome }}
+  <script>
+    window.onload = function () {
+      printVersion();
+    }
+  </script>
+  {{ end }}
+
+  {{ with resources.Get "assets/js/i18n.js" }}
+    {{ if eq hugo.Environment "development" }}
+      {{ with . | js.Build }}
+      <script src="{{ .RelPermalink }}"></script>
+      {{ end }}
+    {{ else }}
+      {{ $opts := dict "minify" true }}
+      {{ with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ with .IsHome }}
+  {{ with resources.Get "assets/js/menuSwitcher.js" }}
+  {{ if eq hugo.Environment "development" }}
+    {{ with . | js.Build }}
+    <script src="{{ .RelPermalink }}"></script>
+    {{ end }}
+  {{ else }}
+    {{ $opts := dict "minify" true }}
+    {{ with . | js.Build $opts | fingerprint }}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{ end }}
+  {{ end }}
+  {{ end }}
+{{ end }}
+</body>
+
+</html>

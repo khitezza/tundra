@@ -1,0 +1,48 @@
+baseURL = 'https://example.org'
+title = 'Example Website'
+languageCode = 'en'
+#theme = arbalest
+
+hasCJKLanguage = true
+enableEmoji = true
+
+[params]
+  description = "This is a website built with Hugo."
+  author = "Name"
+  verification_mastodon = "https://mastodon.social/@anonymous"
+  verification_google = "google-example"
+
+  [params.social]
+    github = "https://github.com"
+    bilibili = "https://bilibili.com"
+    youtube = "youtube"
+    bluesky = "https://bluesky.com"
+    mastodon = "https://mastodon.com"
+    email = "info@exampleemail.com"
+
+  [params.hero]
+    # Do not ignore the video file 'hero-bg.mp4' in the 'static' folder
+    title = "Example Title Example Title Example Title Example Title"
+    subtitle = "Theater Release・February 14, 2025"
+    url = "#"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[pagination]
+  disableAliases = false
+  pagerSize = 10
+  path = 'page'
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.138.0"
+
+[markup.highlight]
+  style="gruvbox"
+
+[frontmatter]
+  lastmod = [":fileModeTime", "lastmod"]

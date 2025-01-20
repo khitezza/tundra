@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="article">
+  <div class="article-container">
+
+    <div class="article-class class-{{ .Params.Class }}">{{ .Params.Class }}</div>
+    <h1>{{ .Title }}</h1>
+    <div class="article-frontmatter">
+      <div class="article-author">
+        {{ if .Params.author }}
+        <span class="i18n-author">Author: </span>{{ .Params.author }}
+        {{ else }}
+        <span class="i18n-author">Author: </span>{{ .Site.Params.author }}
+        {{ end }}
+      </div>
+
+      {{ $datePosted := .Date | time.Format "2006-01-02" }}
+      <span class="i18n-postedon">Poseted on: </span><time datetime="{{ $datePosted }}">{{ $datePosted }}</time>
+      {{ with .Lastmod}}
+      &nbsp;|&nbsp;
+      {{ $dateLastmod := . | time.Format "2006-01-02" }}
+      <span class="i18n-lastmod">Last Modifield: </span><time datetime="{{ $dateLastmod }}">{{ $dateLastmod }}</time>
+      {{ end }}
+      &nbsp;|&nbsp;
+      <span class="i18n-total"></span>{{ .WordCount }} <span class="i18n-words">Words</span>
+    </div>
+    {{ .Content }}
+
+    <div class="article-copyright">
+      {{ with .Params.copyright }}
+      <div class="article-copyright-article">
+        &copy; <span class="i18n-licensed0">This article is licensed under</span> {{ . }} <span
+          class="i18n-licensed1">.</span>
+      </div>
+      {{ end }}
+      {{ with .Params.copyright_code }}
+      <div class="article-copyright-code">
+        &copy; <span class="i18n-licensed2">The code contained in this article ( excluding the command line ) is
+          licensed
+          under</span> {{ . }} <span class="i18n-licensed1">.</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="article-notice">
+    <span class="i18n-thanks">Thank you for your kind reading.</span>
+  </div>
+
+</div>
+{{ end }}

@@ -1,0 +1,122 @@
+{
+    "top": {
+        "en": "TOP",
+        "zh": "顶部"
+    },
+    "news": {
+        "en": "NEWS",
+        "zh": "新闻"
+    },
+    "works": {
+        "en": "WORKS",
+        "zh": "作品"
+    },
+    "blogs": {
+        "en": "BLOGS",
+        "zh": "博客"
+    },
+    "about": {
+        "en": "ABOUT",
+        "zh": "关于"
+    },
+    "more": {
+        "en": "MORE",
+        "zh": "更多"
+    },
+    "readmore": {
+        "en": "READ MORE",
+        "zh": "了解更多"
+    },
+    "company_name": {
+        "en": "Company Name",
+        "zh": "公司名称"
+    },
+    "established": {
+        "en": "Established",
+        "zh": "设立"
+    },
+    "founder": {
+        "en": "Founder",
+        "zh": "创始人"
+    },
+    "members": {
+        "en": "Members",
+        "zh": "成员"
+    },
+    "official_webshop": {
+        "en": "Official Webshop",
+        "zh": "官方网上商店"
+    },
+    "business_outline": {
+        "en": "Business Outline",
+        "zh": "业务概要"
+    },
+    "footer_copy": {
+        "en": "All Rights Reserved",
+        "zh": "版权所有"
+    },
+    "poweredby0": {
+        "en": "Powered by",
+        "zh": "由"
+    },
+    "poweredby1": {
+        "en": "",
+        "zh": "强力驱动"
+    },
+    "privacy_policy": {
+        "en": "Privacy Policy",
+        "zh": "隐私政策"
+    },
+    "bug_report": {
+        "en": "Bug Report",
+        "zh": "网站捉虫"
+    },
+    "contact_info": {
+        "en": "Contact Info",
+        "zh": "联系信息"
+    },
+    "statement1_0": {
+        "en": "Unless otherwise stated, all content on this website are published under the",
+        "zh": "除非另有说明，本网站所有内容均在"
+    },
+    "statement1_1": {
+        "en": "license",
+        "zh": "许可下发布"
+    },
+    "postedon": {
+        "en": "Poseted on: ",
+        "zh": "发布于："
+    },
+    "author": {
+        "en": "Author: ",
+        "zh": "作者："
+    },
+    "lastmod": {
+        "en": "Last Modifield: ",
+        "zh": "最后修改于："
+    },
+    "total": {
+        "en": "",
+        "zh": "共计："
+    },
+    "words": {
+        "en": "Words",
+        "zh": "字"
+    },
+    "licensed0": {
+        "en": "This article is licensed under",
+        "zh": "本文采用"
+    },
+    "licensed1": {
+        "en": ".",
+        "zh": "许可."
+    },
+    "licensed2": {
+        "en": "The code contained in this article ( excluding the command line ) is licensed under",
+        "zh": "本文中所包含代码（ 不含命令行 ）均采用"
+    },
+    "thanks": {
+        "en": "Thank you for your kind reading.",
+        "zh": "感谢阁下垂阅."
+    }
+}
